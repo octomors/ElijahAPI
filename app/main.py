@@ -7,6 +7,7 @@ from models import db_helper, Base
 from api import router as api_router
 
 from fastapi_pagination import add_pagination
+from fastapi.middleware.cors import CORSMiddleware
 
 
 @asynccontextmanager
@@ -23,6 +24,15 @@ async def lifespan(app: FastAPI):
 main_app = FastAPI(
     lifespan=lifespan,
 )
+
+main_app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 main_app.include_router(
     api_router,
 )
