@@ -31,9 +31,6 @@ class AuthConfig(BaseModel):
 
 class UrlPrefix(BaseModel):
     prefix: str = "/api"
-    test: str = "/test"
-    posts: str = "/posts"
-    lab1a1: str = "/lab1"
     auth: str = "/auth"
     users: str = "/users"
     bearer_token_url: str = "/api/auth/login"

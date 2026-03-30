@@ -1,4 +1,4 @@
-# BackendLab1 - Recipe API with Authentication
+# Recipe API with Authentication
 
 FastAPI-based Recipe Management API with user authentication and authorization.
 
@@ -55,7 +55,7 @@ This returns an access token that should be used in subsequent requests.
 
 ### Create Recipe (requires authentication)
 ```bash
-curl -X POST http://localhost:8000/api/lab1/ \
+curl -X POST http://localhost:8000/api/recipes/ \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{
@@ -71,13 +71,13 @@ curl -X POST http://localhost:8000/api/lab1/ \
 
 ### Get Recipes (public)
 ```bash
-curl http://localhost:8000/api/lab1/
-curl http://localhost:8000/api/lab1/1
+curl http://localhost:8000/api/recipes/
+curl http://localhost:8000/api/recipes/1
 ```
 
 ### Update Recipe (requires authentication + ownership)
 ```bash
-curl -X PUT http://localhost:8000/api/lab1/1 \
+curl -X PUT http://localhost:8000/api/recipes/1 \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -d '{"title": "Updated Title"}'
@@ -85,7 +85,7 @@ curl -X PUT http://localhost:8000/api/lab1/1 \
 
 ### Delete Recipe (requires authentication + ownership)
 ```bash
-curl -X DELETE http://localhost:8000/api/lab1/1 \
+curl -X DELETE http://localhost:8000/api/recipes/1 \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
